@@ -1,74 +1,92 @@
-print("HelloWorld") 
+> print("HelloWorld") 
+[1] "HelloWorld"
+
+> print("HelloWorld", quote=FALSE) 
+[1] HelloWorld
+
+> #Creating Variables in R
+> # Initialization of variables
+> var1 = "hello"
+> print(var1)
+[1] "hello"
+> # using leftward operator
+> var2 <- "hello"
+> print(var2)
+[1] "hello"
+> # using rightward operator
+> "hello" -> var3
+> print(var3)
+[1] "hello"
+
+> # using rightward operator
+> "hello" -> var3
+> print(var3)
+[1] "hello
+
+> var1 = "hello"
+> print(class(var1))
+[1] "character"
+
+> print(ls())
+[1] "var1" "var2" "var3"
+
+> # Removing variable
+> rm(var3)
+> print(var3)
+Error: object 'var3' not found
+
+> # changing value of global variable
+> global = 10
+> display()
+Error in display() : could not find function "display"
+
+> # global variable accessed from
+> # within a function
+> display = function(){
++ print(global)
++ }
+> display()
+[1] 
+
+> # changing value of global variable
+> global = 10
+> display()
+[1] 10
+> cat("Age is:\n")
+Age is:
+> func()
+Error in func() : could not find function "func"
+> func = function(){
++ # this variable is local to the
++ # function func() and cannot be
++ # accessed outside this function
++ age = 18 
++ print(age)
++ }
+> cat("Age is:\n")
+Age is:
+> func()
+[1] 
 
 
-print("HelloWorld", quote=FALSE) 
-
-
-
-var1 = "hello"
-print(var1)
-
-# using leftward operator
-var2 <- "hello"
-print(var2)
-
-# using rightward operator
-"hello" -> var3
-print(var3)
-var1 = "hello"
-print(class(var1))
-
-# using equal to operator
-var1 = "hello"
-
-# using leftward operator
-var2 <- "hello"
-
-# using rightward operator
-"hello" -> var3
-
-print(ls())
-
-# using equal to operator
-var1 = "hello"
-
-# using leftward operator
-var2 <- "hello"
-
-# using rightward operator
-"hello" -> var3
-
-# Removing variable
-rm(var3)
-print(var3)
-
-# R program to illustrate
-# usage of global variables
-
-# global variable
-global = 5
-
-# global variable accessed from
-# within a function
-display = function(){
-print(global)
-}
-display()
-
-# changing value of global variable
-global = 10
-display()
-
-# R program to illustrate
-# usage of local variables
-
-func = function(){
-# this variable is local to the
-# function func() and cannot be
-# accessed outside this function
-age = 18 
-print(age)
-}
-cat("Age is:\n")
-func()
-
+> func = function(){
++ # this variable is local to the
++ # function func() and cannot be
++ # accessed outside this function
++ age = 18 
++ print(age)
++ }
+> cat("Age is:\n")
+Age is:
+> func()
+[1] 18
+> 
+> 
+> source("E:/ST/Documents/Basic of R.Rmd")
+[1] "HelloWorld"
+[1] HelloWorld
+[1] "hello"
+[1] "hello"
+[1] "hello"
+[1] "character"
+[1] "display" "func"    "global"  "var1"    "var2"    "var3"
